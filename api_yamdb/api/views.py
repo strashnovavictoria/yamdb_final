@@ -1,11 +1,10 @@
-from api.exceptions import UserValueException
+from api.exceptions import UserValueExceptionError
 from api.permisions import IsAdmin, IsAdminOrReadOnly, ReviewCommentPermission
 from api.serializers import (CategoryReadSerializer, CategorySerializer,
                              CommentSerializer, ConfirmationSerializer,
                              GenreSerializer, ReviewSerializer,
                              TitlePostSerializer, TitleSerializer,
                              TokenSerializer, UsersSerializer)
-from api_yamdb.settings import DEFAULT_FROM_EMAIL
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.db.models import Avg
@@ -18,6 +17,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from reviews.models import Category, Genre, Review, Title, User
+
+from api_yamdb.settings import DEFAULT_FROM_EMAIL
 
 from .filters import TitlesFilter
 
@@ -47,7 +48,7 @@ def get_jwt_token(request):
     serializer.is_valid(raise_exception=True)
     user = get_object_or_404(User, username=serializer.data.get("username"))
     if not user:
-        raise UserValueException("Ошибка имени пользователя")
+        raise UserValueExceptionError("Ошибка имени пользователя")
     confirmation_code = serializer.data.get("confirmation_code")
     if not default_token_generator.check_token(user, confirmation_code):
         return Response(
