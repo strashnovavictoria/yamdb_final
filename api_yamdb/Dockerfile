@@ -1,5 +1,5 @@
 FROM python:3.7-slim
-WORKDIR /app
-COPY . .
-RUN pip3 install -r /app/requirements.txt --no-cache-dir
-CMD python manage.py runserver 0:5000 
+COPY ./ /app
+RUN pip install -r /app/requirements.txt
+WORKDIR /app/api_yamdb/
+CMD python manage.py runserver 0:5000
