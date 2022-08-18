@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    build: strashnovavictoria/yamdb_workflow:latest
+    image: strashnovavictoria/yamdb_workflow:latest
     restart: always
     volumes:
       - static_value:/app/static/
