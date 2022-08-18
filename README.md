@@ -67,3 +67,5 @@ PostgreSQL
 ***
 ### Автор:
 - Виктория Страшнова [strashnovavictoria](https://github.com/strashnovavictoria)
+
+[![Django-app workflow](https://github.com/strashnovavictoria/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/strashnovavictoria/yamdb_final/actions/workflows/yamdb_workflow.yml)
