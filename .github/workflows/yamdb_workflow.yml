@@ -74,4 +74,6 @@ jobs:
           sudo docker pull strashnovavictoria/yamdb_workflow
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 8000:8000 strashnovavictoria/yamdb_workflow 
+          sudo docker run --rm -d -p 8000:8000 strashnovavictoria/yamdb_workflow:latest
+          
+
