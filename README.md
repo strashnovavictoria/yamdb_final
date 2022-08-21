@@ -64,6 +64,13 @@ gunicorn 20.0.4
 nginx
 PostgreSQL
 
+### Получение пусбликации:
+Получение публикации по id.
+
+http://51.250.100.223:8000/api/v1/posts/{id}/
+Ответ:
+{ "id": 0, "author": "string", "text": "string", "pub_date": "2019-08-24T14:15:22Z", "image": "string", "group": 0 }
+
 ***
 ### Автор:
 - Виктория Страшнова [strashnovavictoria](https://github.com/strashnovavictoria)
