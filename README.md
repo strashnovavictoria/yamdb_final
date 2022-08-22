@@ -64,16 +64,38 @@ gunicorn 20.0.4
 nginx
 PostgreSQL
 
-### Получение пусбликации:
+### Получение публикаций:
+Получение списка всех произведений
 
+http://51.250.100.223/api/v1/title/
+[
+  {
+    "count": 0,
+    "next": "string",
+    "previous": "string",
+    "results": [
+      {
+        "id": 0,
+        "name": "string",
+        "year": 0,
+        "rating": 0,
+        "description": "string",
+        "genre": [
+          {
+            "name": "string",
+            "slug": "string"
+          }
+        ],
+        "category": {
+          "name": "string",
+          "slug": "string"
+        }
+      }
+    ]
+  }
+]
 
-http://51.250.100.223/api/v1/
-{
-    "users": "http://51.250.100.223:8000/api/v1/users/",
-    "categories": "http://51.250.100.223:8000/api/v1/categories/",
-    "genres": "http://51.250.100.223:8000/api/v1/genres/",
-    "titles": "http://51.250.100.223:8000/api/v1/titles/"
-}
+Более подробно запросы можно посмотреть по адресу <http://51.250.100.223/redoc/>
 ***
 ### Автор:
 - Виктория Страшнова [strashnovavictoria](https://github.com/strashnovavictoria)
