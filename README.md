@@ -95,7 +95,6 @@ http://51.250.100.223/api/v1/title/
   }
 ]
 
-Более подробно запросы можно посмотреть по адресу <http://51.250.100.230/redoc/>
 ***
 ### Автор:
 - Виктория Страшнова [strashnovavictoria](https://github.com/strashnovavictoria)
